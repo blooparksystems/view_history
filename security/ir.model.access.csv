@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+"access_ir_ui_view_version_group_user","ir_ui_view_version group_user","model_ir_ui_view_version","base.group_user",1,0,0,0
+"access_ir_ui_view_version_group_system","ir_ui_view_version group_system","model_ir_ui_view_version","base.group_system",1,1,1,1

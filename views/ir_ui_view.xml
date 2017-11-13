@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_view_form_extend" model="ir.ui.view">
+          <field name="model">ir.ui.view</field>
+          <field name="inherit_id" ref="base.view_view_form"/>
+          <field name="arch" type="xml">
+            <field name="active" position="after">
+              <field name="enable_history"/>
+            </field>
+            <page string="Inherited Views" position="after">
+                <page string="History" attrs="{'invisible': [('enable_history', '=', False)]}">
+                    <field name="versions" nolabel="1" colspan="4" readonly="1" options="{'reload_on_button': true}">
+                        <tree string="Versions">
+                            <field name="name" />
+                            <field name="current" />
+                            <field name="write_uid"/>
+                            <field name="write_date"/>
+                            <button name="set_current" string="Set Current" type="object" attrs="{'invisible': [('current', '=', True)]}"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <field name="name"/>
+                                <field name="sequence"/>
+                                <field name="write_uid"/>
+                                <field name="write_date"/>
+                                <field name="arch"/>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </page>
+          </field>
+        </record>
+
+    </data>
+</openerp>
